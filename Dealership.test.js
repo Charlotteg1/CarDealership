@@ -22,14 +22,15 @@ describe('Dealership tests', () => {
     });
 
     test('can return manufacturers', () => {
-        const expected = ["Audi", "Volvo", "BMW"];
+        const expected = [ 'Audi', 'Volvo', 'BMW' ];
+        console.log(dealership.getEachManufacturer());
         const actual = dealership.getEachManufacturer();
         expect(actual).toBe(expected);
     });
 
     test('can filter by manufacturer', () => {
-        const expected = [new Car("Audi", "£200", "Petrol")];
-        const actual = dealership.getEachManufacturer();
+        const expected = [car1];
+        const actual = dealership.getCarsByManufacturer("Audi");
         expect(actual).toBe(expected);
     });
 
