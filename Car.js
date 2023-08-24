@@ -1,4 +1,3 @@
-// Create  Car module. The car should have properties representing manufacturer, price and engine type.
 
 const Car = function(manufacturer , price , engineType){
     this.manufacturer = manufacturer;
