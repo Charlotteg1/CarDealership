@@ -4,6 +4,7 @@ const dealership = new Dealership("Car World", 10, []);
 
 const Car = require('./Car');
 
+//before each
 const car1 = new Car("Audi", 200, "Petrol");
 const car2 = new Car("Volvo", 100, "Petrol");
 const car3 = new Car("BMW", 400, "Electric");
@@ -23,15 +24,14 @@ describe('Dealership tests', () => {
 
     test('can return manufacturers', () => {
         const expected = [ 'Audi', 'Volvo', 'BMW' ];
-        console.log(dealership.getEachManufacturer());
         const actual = dealership.getEachManufacturer();
-        expect(actual).toBe(expected);
+        expect(actual).toStrictEqual(expected);
     });
 
     test('can filter by manufacturer', () => {
         const expected = [car1];
         const actual = dealership.getCarsByManufacturer("Audi");
-        expect(actual).toBe(expected);
+        expect(actual).toStrictEqual(expected);
     });
 
     test('can total value', () => {
